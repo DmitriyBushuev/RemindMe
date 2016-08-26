@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/mainBackGround"
-    android:fitsSystemWindows="true"
-    android:id="@+id/drawer_layout">
+    android:fitsSystemWindows="true">
 
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -21,9 +21,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/colorPrimary"
-                app:titleTextColor="@color/titleColor" />
+                app:titleTextColor="@color/whiteColor" />
+
+            <android.support.design.widget.TabLayout
+                android:layout_width="match_parent"
+                android:id="@+id/tab_layout"
+                android:layout_height="wrap_content"
+                app:tabIndicatorColor="@color/whiteColor"
+                app:tabIndicatorHeight="6dp"
+                app:tabSelectedTextColor="@color/whiteColor"
+                app:tabTextColor="@color/whiteColor">
+
+            </android.support.design.widget.TabLayout>
 
         </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
     </android.support.design.widget.CoordinatorLayout>
 
     <android.support.design.widget.NavigationView
@@ -31,8 +48,8 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:menu="@menu/menu_navigation"
-        app:headerLayout="@layout/navigation_header">
+        app:headerLayout="@layout/navigation_header"
+        app:menu="@menu/menu_navigation">
 
     </android.support.design.widget.NavigationView>
 

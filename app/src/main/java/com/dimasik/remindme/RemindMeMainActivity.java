@@ -1,5 +1,7 @@
 package com.dimasik.remindme;
 
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,10 +9,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.dimasik.remindme.adapter.TabPagerFragmentAdapter;
+
 public class RemindMeMainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +25,15 @@ public class RemindMeMainActivity extends AppCompatActivity {
 
         initToolBar();
         initNavigationDrawer();
+        initTabs();
+    }
+
+    private void initTabs() {
+        viewPager = (ViewPager) findViewById(R.id.view_pager);
+        tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        TabPagerFragmentAdapter tabsAdapter = new TabPagerFragmentAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(tabsAdapter);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
     private void initNavigationDrawer() {
