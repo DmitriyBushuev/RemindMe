@@ -2,8 +2,9 @@
 <resources>
 
     <style name="ReminderTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorAccent">@color/whiteColor</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 </resources>

@@ -1,8 +1,11 @@
 package com.dimasik.remindme;
 
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -24,8 +27,9 @@ public class RemindMeMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initToolBar();
-        initNavigationDrawer();
         initTabs();
+        initNavigationDrawer();
+
     }
 
     private void initTabs() {
@@ -39,6 +43,24 @@ public class RemindMeMainActivity extends AppCompatActivity {
     private void initNavigationDrawer() {
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.action_toogle_open_desc, R.string.action_toogle_close_desc);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.menu_item_notification:
+                        viewPager.setCurrentItem(Constants.NOTIFICATION_TAB);
+                        drawerLayout.closeDrawers();
+                        break;
+                }
+                return true;
+            }
+        });
 
     }
 
