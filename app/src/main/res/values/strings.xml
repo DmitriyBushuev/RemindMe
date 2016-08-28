@@ -5,4 +5,9 @@
     <string name="menu_item_notifications">Напоминания</string>
     <string name="action_toogle_open_desc">Open</string>
     <string name="action_toogle_close_desc">Close</string>
+
+    <string name="tab_todo">TODO</string>
+    <string name="tab_ideas">Ideas</string>
+    <string name="tab_birthdays">Birthdays</string>
+    <string name="tab_history">History</string>
 </resources>
