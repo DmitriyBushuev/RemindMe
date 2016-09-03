@@ -15,6 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:theme="@style/AddingActivityTheme"
+            android:name=".AddingActivity"
+            android:parentActivityName=".RemindMeMainActivity"/>
     </application>
 
 </manifest>

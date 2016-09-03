@@ -29,6 +29,7 @@
                 android:layout_height="wrap_content"
                 app:tabIndicatorColor="@color/whiteColor"
                 app:tabIndicatorHeight="6dp"
+                android:background="@color/colorPrimary"
                 app:tabSelectedTextColor="@color/whiteColor"
                 app:tabTextColor="@color/whiteColor">
 
@@ -46,6 +47,7 @@
             android:id="@+id/floating_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:backgroundTint="@color/colorPrimary"
             android:src="@drawable/ic_plus"
             android:layout_gravity="end|bottom"
             android:layout_marginBottom="@dimen/fab_margin"

@@ -29,13 +29,12 @@ public class RemindMeMainActivity extends AppCompatActivity {
         initToolBar();
         initTabs();
         initNavigationDrawer();
-
     }
 
     private void initTabs() {
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        TabPagerFragmentAdapter tabsAdapter = new TabPagerFragmentAdapter(this,getSupportFragmentManager());
+        TabPagerFragmentAdapter tabsAdapter = new TabPagerFragmentAdapter(this, getSupportFragmentManager());
         viewPager.setAdapter(tabsAdapter);
         tabLayout.setupWithViewPager(viewPager);
     }
@@ -46,7 +45,6 @@ public class RemindMeMainActivity extends AppCompatActivity {
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.action_toogle_open_desc, R.string.action_toogle_close_desc);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -76,4 +74,5 @@ public class RemindMeMainActivity extends AppCompatActivity {
         });
         toolbar.inflateMenu(R.menu.menu);
     }
+
 }
